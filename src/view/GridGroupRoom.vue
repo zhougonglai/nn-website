@@ -128,7 +128,7 @@ const { resume, isActive } = useIntervalFn(() => {
     grid6.value.list = grid6.value.list.concat(fake(2))
   }
 
-}, 1000)
+}, 2000)
 
 
 onMounted(() => {
