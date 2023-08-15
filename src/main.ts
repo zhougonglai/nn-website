@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
 import { autoAnimatePlugin } from '@formkit/auto-animate/vue';
-import { MotionPlugin } from '@vueuse/motion';
+import { MotionPlugin } from '@vueuse/motion'
 import './style.scss';
 import App from './App.vue';
 import router from './router';
