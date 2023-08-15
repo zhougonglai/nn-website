@@ -1,7 +1,7 @@
 <template>
   <div class="border border-[#E7E9EA] h-[228px] flex flex-col text-[#4E5058]">
     <div class="px-2 pt-2 indent-2 text-sm flex">
-      <div class="bg-[#F2F3F5] flex-1 flex">
+      <div class="bg-[#F2F3F5] flex-1 flex rounded">
         <div class="leading-8 flex-1">
           {{ modelValue.title }}
         </div>
