@@ -4,11 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vue-tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@heroicons/vue": "^2.0.18",
     "gsap": "^3.12.2",
     "vue": "^3.3.4",
     "vue-router": "^4.1.6"
@@ -36,6 +37,7 @@
     "tailwindcss": "latest",
     "typescript": "^5.0.2",
     "unplugin-auto-import": "latest",
+    "unplugin-svg-component": "^0.7.4",
     "unplugin-vue-components": "latest",
     "vite": "^4.4.9",
     "vue-tsc": "^1.8.8",

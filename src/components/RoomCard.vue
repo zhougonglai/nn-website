@@ -14,7 +14,7 @@
       </div>
     </div>
     <!-- Plan B -->
-    <!-- <ul class="flex-1 transition-all grid place-content-center place-items-center p-2 " :class="[
+    <ul class="flex-1 transition-all grid place-content-center place-items-center p-2 " :class="[
       'grid-cols-1',
       'grid-cols-1',
       'grid-cols-2 gap-4',
@@ -27,14 +27,14 @@
       'grid-cols-5 gap-2',
       'grid-cols-5 gap-2',
     ][modelValue.list.length]" v-auto-animate>
-      <li v-for="(u, i) in modelValue.list" :key="i">
+      <li v-for="(u, i) in modelValue.list" :key="i" v-motion :initial="initial" :enter="enter" :leave="leave">
         <img :src="u.avatar" :width="[0, 100, 100, 70, 70, 70, 70, 70, 70, 40, 40][modelValue.list.length]"
-          class="rounded-full aspect-square object-cover transition-all" v-motion :initial="initial" :enter="enter"
-          :leave="leave" />
+          class="rounded-full aspect-square object-cover transition-all" />
       </li>
-    </ul> -->
+    </ul>
     <!-- Plan A -->
-    <TransitionGroup appear tag="ul" :css="false" class="flex-1  grid place-content-center place-items-center p-2 "
+    <!-- <TransitionGroup appear tag="ul" :css="false"
+      class="flex-1 transition-[width,height] flex-nowrap overflow-clip grid grid-flow-row place-content-center place-items-center p-2 "
       :class="[
         'grid-cols-1',
         'grid-cols-1',
@@ -48,11 +48,12 @@
         'grid-cols-5 gap-2',
         'grid-cols-5 gap-2',
       ][modelValue.list.length]" @appear="onEnter" @enter="onEnter" @leave="onLeave">
-      <li v-for="(u, i) in modelValue.list" :key="i" :data-index="i" class="">
+      <li v-for="(u, i) in modelValue.list" :key="i" :data-index="i"
+        class="transition-[width,height] flex items-center justify-center">
         <img :src="u.avatar" :width="[0, 100, 100, 70, 70, 70, 70, 70, 70, 40, 40][modelValue.list.length]"
           class="rounded-full aspect-square object-cover transition-all" />
       </li>
-    </TransitionGroup>
+    </TransitionGroup> -->
   </div>
 </template>
 <script lang="ts" setup>
@@ -69,9 +70,9 @@ const enter = ref({
   opacity: 1,
   transition: {
     type: 'spring',
-    stiffness: 250,
-    damping: 25,
-    mass: 0.5,
+    stiffness: 400,
+    damping: 15,
+    mass: 1,
   },
 })
 
@@ -80,34 +81,47 @@ const leave = ref({
   opacity: 0,
   transition: {
     type: 'spring',
-    stiffness: 250,
-    damping: 25,
-    mass: 0.5,
+    stiffness: 400,
+    damping: 15,
+    mass: 1,
   },
 })
 
 const onEnter = (el: HTMLElement, done: () => void) => {
   console.log('onEnter')
   gsap.fromTo(el, {
-    scale: 0
+    scale: 0,
+    opacity: 0,
   }, {
     scale: 1,
-    duration: 0.6,
+    opacity: 1,
+    duration: 1,
     lazy: true,
     // ease: "elastic.out(2.5, 0.3)",
     immediateRender: false,
-    ease: Elastic.easeOut.config(2, 0.3),
+    stagger: 0.1,
+    ease: Elastic.easeOut.config(1.5, 0.3),
     onComplete: done
   })
 }
 
 const onLeave = (el: HTMLElement, done: () => void) => {
   console.log('onLeave')
-  gsap.to(el, {
+  gsap.fromTo(el,
+    {
+      scale: 1,
+      opacity: 1,
+      width: el.offsetWidth,
+      height: el.offsetHeight
+    }, {
+    width: 0,
+    height: 0,
     scale: 0,
     opacity: 0,
-    duration: 0.2,
+    overwrite: true,
+    duration: 0.1,
     ease: 'easeIn',
+    immediateRender: false,
     onComplete: done
   })
 }
