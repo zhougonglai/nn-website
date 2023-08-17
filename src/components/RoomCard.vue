@@ -14,24 +14,25 @@
       </div>
     </div>
     <!-- Plan B -->
-    <ul class="flex-1 transition-all grid place-content-center place-items-center p-2 " :class="[
-      'grid-cols-1',
-      'grid-cols-1',
-      'grid-cols-2 gap-4',
-      'grid-cols-3 gap-4',
-      'grid-cols-4 gap-4',
-      'grid-cols-4 gap-4',
-      'grid-cols-4 gap-4',
-      'grid-cols-4 gap-4',
-      'grid-cols-4 gap-4',
-      'grid-cols-5 gap-2',
-      'grid-cols-5 gap-2',
-    ][modelValue.list.length]" v-auto-animate>
+    <TransitionGroup :css="false" tag="ul" class="flex-1 transition-all grid place-content-center place-items-center p-2 "
+      :class="[
+        'grid-cols-1',
+        'grid-cols-1',
+        'grid-cols-2 gap-4',
+        'grid-cols-3 gap-4',
+        'grid-cols-4 gap-4',
+        'grid-cols-4 gap-4',
+        'grid-cols-4 gap-4',
+        'grid-cols-4 gap-4',
+        'grid-cols-4 gap-4',
+        'grid-cols-5 gap-2',
+        'grid-cols-5 gap-2',
+      ][modelValue.list.length]">
       <li v-for="(u, i) in modelValue.list" :key="i" v-motion :initial="initial" :enter="enter" :leave="leave">
         <img :src="u.avatar" :width="[0, 100, 100, 70, 70, 70, 70, 70, 70, 40, 40][modelValue.list.length]"
           class="rounded-full aspect-square object-cover transition-all" />
       </li>
-    </ul>
+    </TransitionGroup>
     <!-- Plan A -->
     <!-- <TransitionGroup appear tag="ul" :css="false"
       class="flex-1 transition-[width,height] flex-nowrap overflow-clip grid grid-flow-row place-content-center place-items-center p-2 "
@@ -58,18 +59,26 @@
 </template>
 <script lang="ts" setup>
 import { gsap, Elastic } from 'gsap'
+import { useMotions } from '@vueuse/motion'
 const modelValue = defineModel();
+const motions = useMotions()
 
 const initial = ref({
   scale: 0,
-  opacity: 0,
+  transition: {
+    type: 'spring',
+    bounce: 4,
+    stiffness: 250,
+    damping: 25,
+    mass: 0.5,
+  },
 })
 
 const enter = ref({
   scale: 1,
-  opacity: 1,
   transition: {
     type: 'spring',
+    bounce: 8,
     stiffness: 400,
     damping: 15,
     mass: 1,
@@ -78,13 +87,6 @@ const enter = ref({
 
 const leave = ref({
   scale: 0,
-  opacity: 0,
-  transition: {
-    type: 'spring',
-    stiffness: 400,
-    damping: 15,
-    mass: 1,
-  },
 })
 
 const onEnter = (el: HTMLElement, done: () => void) => {

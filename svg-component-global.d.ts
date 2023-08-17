@@ -1,0 +1,21 @@
+
+import 'vue'
+declare module 'vue' {
+  export interface GlobalComponents {
+    SvgIcon: import("vue").DefineComponent<{
+        name: {
+            type: import("vue").PropType<"add emoji" | "ADD#16" | "ADD" | "arrow-down-s-fill" | "arrow-right-s-fill" | "arrow-up-s-fill" | "back" | "battle" | "channel-settings" | "channel-share" | "chart" | "close Window" | "contacts-fill" | "copy" | "corner-down" | "custom" | "delete" | "emotion-fill" | "female" | "folder-open" | "folder" | "Game Guild" | "game" | "group" | "group24" | "headphone-off" | "headphone" | "image-edit" | "link" | "lock#12" | "lock" | "logout" | "male" | "MentorwithIcon" | "mic-fill#12" | "mic-off-fill#12" | "mic-off" | "mic" | "new massage" | "new-friend" | "no" | "Notice-unread" | "Notice" | "notification-fill" | "notification-off-fill" | "offline" | "online" | "people" | "personal community" | "person_card" | "phone" | "Play with" | "PlaywithIcon" | "presentation-fill#24" | "presentation-fill" | "reply" | "screenshot-fill" | "search#24" | "search" | "set" | "settings" | "shut-down" | "sound-module" | "subtract" | "team" | "text-normal" | "text-unread" | "user-forbid" | "user-received-fill32" | "user-received" | "user-received2" | "user_card" | "volume#12" | "volume-mute-fill" | "volume-open-fill" | "volume" | "warning" | "Window+" | "Window-" | "yes" | "人员设置" | "控制器">;
+            default: string;
+            required: true;
+        };
+    }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+        name: {
+            type: import("vue").PropType<"add emoji" | "ADD#16" | "ADD" | "arrow-down-s-fill" | "arrow-right-s-fill" | "arrow-up-s-fill" | "back" | "battle" | "channel-settings" | "channel-share" | "chart" | "close Window" | "contacts-fill" | "copy" | "corner-down" | "custom" | "delete" | "emotion-fill" | "female" | "folder-open" | "folder" | "Game Guild" | "game" | "group" | "group24" | "headphone-off" | "headphone" | "image-edit" | "link" | "lock#12" | "lock" | "logout" | "male" | "MentorwithIcon" | "mic-fill#12" | "mic-off-fill#12" | "mic-off" | "mic" | "new massage" | "new-friend" | "no" | "Notice-unread" | "Notice" | "notification-fill" | "notification-off-fill" | "offline" | "online" | "people" | "personal community" | "person_card" | "phone" | "Play with" | "PlaywithIcon" | "presentation-fill#24" | "presentation-fill" | "reply" | "screenshot-fill" | "search#24" | "search" | "set" | "settings" | "shut-down" | "sound-module" | "subtract" | "team" | "text-normal" | "text-unread" | "user-forbid" | "user-received-fill32" | "user-received" | "user-received2" | "user_card" | "volume#12" | "volume-mute-fill" | "volume-open-fill" | "volume" | "warning" | "Window+" | "Window-" | "yes" | "人员设置" | "控制器">;
+            default: string;
+            required: true;
+        };
+    }>>, {
+        name: "add emoji" | "ADD#16" | "ADD" | "arrow-down-s-fill" | "arrow-right-s-fill" | "arrow-up-s-fill" | "back" | "battle" | "channel-settings" | "channel-share" | "chart" | "close Window" | "contacts-fill" | "copy" | "corner-down" | "custom" | "delete" | "emotion-fill" | "female" | "folder-open" | "folder" | "Game Guild" | "game" | "group" | "group24" | "headphone-off" | "headphone" | "image-edit" | "link" | "lock#12" | "lock" | "logout" | "male" | "MentorwithIcon" | "mic-fill#12" | "mic-off-fill#12" | "mic-off" | "mic" | "new massage" | "new-friend" | "no" | "Notice-unread" | "Notice" | "notification-fill" | "notification-off-fill" | "offline" | "online" | "people" | "personal community" | "person_card" | "phone" | "Play with" | "PlaywithIcon" | "presentation-fill#24" | "presentation-fill" | "reply" | "screenshot-fill" | "search#24" | "search" | "set" | "settings" | "shut-down" | "sound-module" | "subtract" | "team" | "text-normal" | "text-unread" | "user-forbid" | "user-received-fill32" | "user-received" | "user-received2" | "user_card" | "volume#12" | "volume-mute-fill" | "volume-open-fill" | "volume" | "warning" | "Window+" | "Window-" | "yes" | "人员设置" | "控制器";
+    }>;
+  }
+}

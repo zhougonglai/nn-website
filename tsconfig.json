@@ -28,6 +28,8 @@
     "src/**/*.vue",
     "auto-imports.d.ts",
     "components.d.ts",
+    "svg-component.d.ts",
+    "svg-component-global.d.ts"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -1,0 +1,12 @@
+<svg id="组件_326_11" data-name="组件 326 – 11" xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46">
+  <g id="矩形_31122" data-name="矩形 31122" fill="#fff" stroke="rgba(96,102,109,0.5)" stroke-width="1">
+    <rect width="46" height="46" rx="23" stroke="none"/>
+    <rect x="0.5" y="0.5" width="45" height="45" rx="22.5" fill="none"/>
+  </g>
+  <g id="组_42398" data-name="组 42398" transform="translate(17.73 17.73)">
+    <g id="组_24409" data-name="组 24409">
+      <path id="路径_13041" data-name="路径 13041" d="M14,14,24.539,24.539" transform="translate(-14 -14)" fill="none" stroke="#60666d" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"/>
+      <path id="路径_13042" data-name="路径 13042" d="M14,24.539,24.539,14" transform="translate(-14 -14)" fill="none" stroke="#60666d" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"/>
+    </g>
+  </g>
+</svg>

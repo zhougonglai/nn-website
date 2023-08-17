@@ -4,22 +4,16 @@
   </section>
 </template>
 <script setup lang="tsx">
+import SvgIcon from '~virtual/svg-component';
+
 const modelValue = ref('person')
 
 const list = [
   {
-    prefixIcon: (
-      <svg class="w-4 h-4 fill-app-primary">
-        <use xlinkHref="#icon-a-zu-2" />
-      </svg>
-    ),
+    prefixIcon: <SvgIcon name='link' />,
     label: '个人社区',
     value: 'person',
-    suffixIcon: (
-      <svg class="w-4 h-4 fill-current">
-        <use xlinkHref="#icon-a-zu37188" />
-      </svg>
-    ),
+    suffixIcon: <SvgIcon name="ADD" />,
   },
   {
     prefixIcon: (
