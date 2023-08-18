@@ -28,17 +28,9 @@
   </RadioGroup>
 </template>
 <script setup lang="ts">
+/* global RadioItem */
 import { isVNode } from 'vue'
-import type { VNode } from 'vue'
-
-type List = {
-  prefixIcon?: string | number | VNode
-  label: string
-  value: any
-  disabled?: boolean
-  suffixIcon?: string | number | VNode
-}
 
 const modelValue = defineModel()
-const list = defineModel<List>('list')
+const list = defineModel<RadioItem[]>('list')
 </script>
