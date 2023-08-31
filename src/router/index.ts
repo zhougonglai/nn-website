@@ -21,6 +21,11 @@ export default createRouter({
       path: '/avatars',
       name: 'avatars',
       component: () => import('@/view/AvatarPage.vue')
-    }
+    },
+    {
+      path: '/grid_mics',
+      name: 'GridMics',
+      component: () => import('@/view/GridMics.page.vue')
+    },
   ],
 });
