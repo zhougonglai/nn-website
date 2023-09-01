@@ -5,19 +5,36 @@
         <li v-for="(url, key, index) in imgs" :key="key"
           class="h-60 w-full rounded border border-gray-300 flex items-center justify-center">
           <div class="relative w-16 h-16 flex items-center justify-center">
-            <div v-if="index == 0" class="animate-ping absolute inset-0 rounded-full bg-yellow-500 bg-opacity-60" />
+
+            <div v-if="index == 0" class="animate-ping absolute inset-0 rounded-full bg-yellow-500 " />
+
             <template v-else-if="index == 1">
-              <div
-                class="animate-ping animate-delay-75 absolute inset-0 rounded-full border border-yellow-500 border-opacity-80" />
-              <div
-                class="animate-ping animate-delay-300 absolute inset-0 rounded-full border border-yellow-500 border-opacity-80" />
-              <div
-                class="animate-ping animate-delay-700 absolute inset-0 rounded-full border border-yellow-500 border-opacity-80" />
+              <div class="animate-ping animate-delay-75 absolute inset-0 rounded-full border border-yellow-500 " />
+              <div class="animate-ping animate-delay-300 absolute inset-0 rounded-full border border-yellow-500 " />
+              <div class="animate-ping animate-delay-700 absolute inset-0 rounded-full border border-yellow-500 " />
             </template>
 
-            <div class="absolute inset-0 scale-50" v-else-if="index == 2">
+            <div class="absolute inset-0 scale-[.25]" v-else-if="index == 2">
               <div v-for="i in 128" :key="i" class="spike" :style="{ '--i': i }" />
             </div>
+
+            <lottie-player v-else-if="index === 3" autoplay loop mode="normal" :src="wave1"
+              class="absolute inset-0 scale-[5]" />
+
+            <lottie-player v-else-if="index === 4" autoplay loop mode="normal" :src="wave2"
+              class="absolute inset-0 scale-[4]" />
+
+            <lottie-player v-else-if="index === 5" autoplay loop mode="normal" :src="wave3"
+              class="absolute inset-0 scale-[3]" />
+
+            <lottie-player v-else-if="index === 6" autoplay loop mode="normal"
+              :src="getJson('/src/assets/json/wave4.json')" class="absolute inset-0 scale-[3]" />
+
+            <lottie-player v-else-if="index === 7" autoplay loop mode="normal"
+              :src="getJson('/src/assets/json/wave5.json')" class="absolute inset-0 scale-[4]" />
+
+            <lottie-player v-else-if="index === 8" autoplay loop mode="normal"
+              :src="getJson('/src/assets/json/wave6.json')" class="absolute inset-0 scale-[3]" />
 
             <img :src="url" width="64" height="64" class="rounded-full aspect-square z-10" />
           </div>
@@ -27,7 +44,11 @@
   </section>
 </template>
 <script setup lang="ts">
+import wave1 from '@/assets/json/wave1.json'
+import wave2 from '@/assets/json/wave2.json'
+import wave3 from '@/assets/json/wave3.json'
 const imgs = import.meta.glob('@/assets/fake/*.webp', { eager: true, as: 'url' })
+const getJson = (url: string) => import.meta.glob('@/assets/json/*.json', { eager: true, as: 'url' })[url]
 
 
 </script>
@@ -63,7 +84,7 @@ const imgs = import.meta.glob('@/assets/fake/*.webp', { eager: true, as: 'url' }
 
 $p: 3;
 $h: .25em;
-$w: 4em;
+$w: 8rem;
 $t: 9s;
 $min: .1;
 $dif: 1 - $min;
@@ -81,7 +102,8 @@ $ua: math.div(360deg, $m);
   height: $h;
   transform-origin: 0 50%;
   transform: rotate(calc(var(--i)*1turn/var(--n))) translate(calc(#{$h}/var(--f))) scalex(var(--fx));
-  background: currentcolor;
+  // background: currentcolor;
+  background-color: rgb(245, 158, 11);
   color: HSL(calc(var(--i)*#{$p}*360/var(--n)), 100%, 75%);
   animation: a $t ease-in-out calc(var(--i)/var(--n)*#{-2*$t}) infinite;
 

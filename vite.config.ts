@@ -16,6 +16,11 @@ import {
 export default defineConfig({
   plugins: [
     vue({
+      template: {
+        compilerOptions: {
+          isCustomElement: (tag: any) => tag.startsWith('lottie'),
+        },
+      },
       script: {
         propsDestructure: true,
         defineModel: true,

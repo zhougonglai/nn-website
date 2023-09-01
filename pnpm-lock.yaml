@@ -1,4 +1,4 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
 
 settings:
   autoInstallPeers: true
@@ -29,8 +29,8 @@ devDependencies:
     specifier: ^1.7.7
     version: 1.7.7(vue@3.3.4)
   '@lottiefiles/lottie-player':
-    specifier: ^1.7.1
-    version: 1.7.1
+    specifier: ^2.0.2
+    version: 2.0.2
   '@vitejs/plugin-vue':
     specifier: ^4.2.3
     version: 4.2.3(vite@4.4.9)(vue@3.3.4)
@@ -671,8 +671,8 @@ packages:
       '@lit-labs/ssr-dom-shim': 1.1.1
     dev: true
 
-  /@lottiefiles/lottie-player@1.7.1:
-    resolution: {integrity: sha512-U2gokX7ZXHCD+DgRXfaFyxuVsc0SYfC2mXndnCVwGvpdApUGqvpZovihdB8p9fDKU2SBWLWBq38CuJTVz6k3Hg==}
+  /@lottiefiles/lottie-player@2.0.2:
+    resolution: {integrity: sha512-R9WF2/gFboZ0GW3QjqtbZF94JQq8oI1t5XWZPtTypvk2xTizphybZu+c08QFQbqY6rnkazHIyRBj2MK0qr6Hrw==}
     dependencies:
       '@types/pako': 1.0.4
       lit: 2.8.0

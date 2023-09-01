@@ -1,8 +1,8 @@
 import { createApp } from 'vue';
 import { autoAnimatePlugin } from '@formkit/auto-animate/vue';
 import { MotionPlugin } from '@vueuse/motion'
-
 import SvgIcon from '~virtual/svg-component'
+import "@lottiefiles/lottie-player";
 
 import './style.scss';
 import App from './App.vue';
