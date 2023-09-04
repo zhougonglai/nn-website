@@ -27,5 +27,10 @@ export default createRouter({
       name: 'GridMics',
       component: () => import('@/view/GridMics.page.vue')
     },
+    {
+      path: '/scroll',
+      name: 'scroll',
+      component: () => import('@/view/ScrollLoadPage.vue')
+    }
   ],
 });
