@@ -32,6 +32,11 @@ export default createRouter({
       name: 'ActivityPage',
       props: true,
       component: () => import('@/view/ActivityPage.vue')
+    },
+    {
+      path: '/scroll',
+      name: 'scroll',
+      component: () => import('@/view/ScrollLoadPage.vue')
     }
   ],
 });

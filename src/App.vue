@@ -5,6 +5,7 @@
       <router-link to="/RoomCard"> RoomCard </router-link>
       <router-link to="/avatars"> avatars </router-link>
       <router-link to="/grid_mics"> grid_mics </router-link>
+      <router-link to="/scroll"> scroll </router-link>
     </header> -->
     <router-view> </router-view>
   </main>
