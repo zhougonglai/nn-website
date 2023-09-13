@@ -8,6 +8,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AvatarGroup: typeof import('./src/components/AvatarGroup.vue')['default']
+    Carousel: typeof import('./src/components/Carousel.vue')['default']
     RadioGroup: typeof import('@headlessui/vue')['RadioGroup']
     RadioGroupDescription: typeof import('@headlessui/vue')['RadioGroupDescription']
     RadioGroupLabel: typeof import('@headlessui/vue')['RadioGroupLabel']

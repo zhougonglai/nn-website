@@ -5,7 +5,7 @@ export default createRouter({
   routes: [
     {
       path: '',
-      redirect: '/RadioList',
+      redirect: '/activity/1',
     },
     {
       path: '/RadioList',
@@ -27,5 +27,11 @@ export default createRouter({
       name: 'GridMics',
       component: () => import('@/view/GridMics.page.vue')
     },
+    {
+      path: '/activity/:activity',
+      name: 'ActivityPage',
+      props: true,
+      component: () => import('@/view/ActivityPage.vue')
+    }
   ],
 });
